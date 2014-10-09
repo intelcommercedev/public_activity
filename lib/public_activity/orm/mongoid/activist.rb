@@ -21,12 +21,12 @@ module PublicActivity
         #
         def activist
           has_many :activities_as_owner,
-            :class_name => "::PublicActivity::Activity",
-            :inverse_of => :owner
+                   :class_name => PublicActivity.config.model_name,
+                   :inverse_of => :owner
 
           has_many :activities_as_recipient,
-            :class_name => "::PublicActivity::Activity",
-            :inverse_of => :recipient
+                   :class_name => PublicActivity.config.model_name,
+                   :inverse_of => :recipient
         end
       end
     end
